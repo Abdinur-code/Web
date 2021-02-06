@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project: Travel webpage</title>
+    </head>
+    <style>
+    body{
+        background-color:rgb(232, 58, 232);
+    }
+        h1{
+            color:Red;
+        }
+        p{
+            background-color:black;
+        }
+        p{
+            color:red;
+        }
+        li{
+            color:green;
+        }
+        h3{
+            color:rgb(69, 145, 131);
+        }
+    </style>
+    <body>
+    
+        <h1>Travel to Almaty .</h1>
+        <img src="https://www.kasandbox.org/programming-images/space/healthheart.png">
+        <p> Almaty (/ˈælməti/; Kazakh pronunciation: [ɑlmɑˈtə]; Cyrillic: Алматы), formerly known as Alma-Ata and Verny (Russian: Верный), is the largest city in Kazakhstan, with a population of about 2,000,000 people, about 11% of the country's total population,[5] and more than 2.7 million in its built-up area that encompasses Talgar, Boraldai, Otegen Batyr and many other suburbs. It served as capital of the Kazakh Soviet Socialist Republic and later independent Kazakhstan from 1929 to 1997.[6] In 1997, the government relocated the capital to Akmola (renamed Astana in 1998, later renamed Nur-Sultan in 2019) in the north of the country.</p>
+        <h3>
+            Top 3 reason to live in Almaty
+        </h3>
+        <li>Mountains</li>
+        <li>A lot of Entertainment</li>
+        <li>Most beautiful city in KZ </li>
+    </body>
+</html>
