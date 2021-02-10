@@ -1,400 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Instagram </title>
-    
-</head>
-<style>
-    @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-    
-    *,
-    *::before,
-    *::after{
-      margin: 0;
-      padding: 0;
-      box-sizing: inherit;
-    }
-    
-    html
-    {
-      font-size: 10px;
-      box-sizing: border-box;
-    }
-    
-    /*Smartphone image*/
-    img
-    {
-      width: 100%;
-      height: 100%;
-      max-width: 100%;
-    }
-    
-    /*link styling*/
-    a
-    {
-      text-decoration: none;
-    }
-    
-    /*Logo styling*/
-    h1
-    {
-      font-family: 'Pacifico', cursive;
-      font-size: 40px;
-    }
-    
-    /*body background color*/
-    body
-    {
-      background-color: #fafafa;
-    }
-    
-    /*Wrapper is like a container of body*/
-    #wrapper
-    {
-      width: 100%;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding-top: 2rem;
-    }
-    
-    .container
-    {
-      width: 100%;
-      max-width: 93.5rem;
-      margin: 3rem auto 0;
-    }
-    
-    #wrapper > .container
-    {
-      display: flex;
-      padding: 0 8rem;
-    }
-    
-    /*smartphone image*/
-    .phone-app-demo
-    {
-      height: 61.8rem;
-      background: url('https://uditsolutions.in/babamachine/wp-content/uploads/2019/08/phone.png') center no-repeat;
-      flex: 1;
-    }
-    
-    /*form styling*/
-    .form-data
-    {
-      width: 100%;
-      max-width: 35rem;
-      margin-top: 3rem;
-    }
-    
-    .form-data form
-    {
-      background-color: #fff;
-      border: 2px solid #eee;
-      display: flex;
-      flex-direction: column;
-      padding: 2rem 4rem;
-      text-align: center;
-    }
-    
-    /*logo again styling*/
-    .logo h1
-    {
-      /*width: 17.5rem;*/
-      margin-bottom: 2.5rem;
-    }
-    
-    /*form input styling*/
-    .form-data form input
-    {
-      padding: .8rem;
-      margin-bottom: .5rem;
-      border: 2px solid #eee;
-      border-radius: .4rem;
-    }
-    
-    .form-btn
-    {
-      margin: 1rem 0 1.5rem;
-      height: 3rem;
-      background-color: #3897f0;
-      font-size: 1.4rem;
-      color: #fff;
-      font-weight: bold;
-      border: none;
-      border-radius: .4rem;
-      cursor: pointer;
-    }
-    
-    /*OR font styling*/
-    .has-separator
-    {
-      font-size: 1.3rem;
-      color: #999999;
-      text-transform: uppercase;
-      position: relative;
-      margin-bottom: 2.5rem;
-    }
-    
-    .has-separator::before,
-    .has-separator::after{
-      content: '';
-      position: absolute;
-      background-color: #eee;
-      width: 40%;
-      height: 1.5px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    
-    .has-separator::before
-    {
-      left: 0;
-    }
-    
-    .has-separator::after
-    {
-      right: 0;
-    }
-    
-    /*FACEBOOK ligin text styling*/
-    .facebook-login
-    {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #385185;
-      margin-bottom: 2.5rem;
-    }
-    
-    .facebook-login
-    {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: #385185;
-      margin-bottom: 2.5rem;
-    }
-    
-    .facebook-login i
-    {
-      font-size: 2rem;
-      margin-right: .7rem;
-    }
-    
-    /*password reset styling*/
-    .password-reset
-    {
-      font-size: 1.2rem;
-      color: #003569;
-    }
-    
-    /*signup text styling*/
-    .sign-up
-    {
-      text-align: center;
-      font-size: 1.4rem;
-      color: #262626;
-      padding: 2rem 0;
-      background-color: #fff;
-      border: 2px solid #eee;
-      margin: 1rem 0;
-    }
-    
-    .sign-up
-    {
-      text-align: center;
-      font-size: 1.4rem;
-      color: #262626;
-      padding: 2rem 0;
-      background-color: #fff;
-      border: 2px solid #eee;
-      margin: 1rem 0;
-    }
-    
-    .sign-up a
-    {
-      color: #3897f0;
-      font-weight: bold;
-    }
-    
-    /*Play stor and App store image styling*/
-    .get-the-app
-    {
-      font-size: 1.4rem;
-      text-align: center;
-    }
-    
-    .get-the-app span
-    {
-      display: block;
-      margin: 2rem 0;
-      color: #262626;
-    }
-    
-    .badge
-    {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-    
-    .badge img
-    {
-      max-width: 14rem;
-      cursor: pointer;
-    }
-    
-    .badge img:first-child
-    {
-      margin-right: 1rem;
-    }
-    
-    /*Footer link styling*/
-    footer
-    {
-      padding: 5rem 0;
-    }
-    
-    footer .container
-    {
-      display: flex;
-      justify-content: space-between;
-      font-weight: bold;
-      text-transform: uppercase;
-      font-size: 1.3rem;
-      flex-wrap: wrap;
-      margin-top: 0;
-    }
-    
-    .footer-nav ul
-    {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-    }
-    
-    .footer-nav ul li
-    {
-      margin-right: 1.6rem;
-    }
-    
-    .footer-nav ul li a
-    {
-      color: #003569;
-    }
-    
-    .copyright-notice
-    {
-      color: #999999;
-    }
-    
-    /*responsive styling*/
-    @media (max-width: 900px)
-    {
-      .phone-app-demo{
-        display: none;
-      }
-    
-      .form-data
-      {
-        margin: 0 auto;
-      }
-    
-      #wrapper > .container
-      {
+    <head>
+        <meta charset="UTF-8">
+        <title>Instagram</title>
+    </head>
+    <style>
+    *{
+        margin: 0;
         padding: 0;
-      }
-    
-      footer .container
-      {
-        padding: 0 2rem;
-        justify-content: center;
-      }
-    
-      .footer-nav ul
-      {
-        justify-content: center;
-      }
-    
-      .footer-nav ul li
-      {
-        margin-bottom: 1rem;
-      }
+        outline: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+        color:#2B2E2F;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     }
-    
-    @media (max-width: 450px)
-    {
-      #wrapper
-      {
-        padding-top: 0;
-      }
-      .form-data form
-      {
-        background-color: transparent;
-        border: none;
-        padding: 0 2rem;
-      }
-      .sign-up
-      {
-        background-color: transparent;
-        border: none;
-        margin: 4rem 0;
-      }
-      footer
-      {
-        padding-bottom: 2rem;
-      }
-    }</style>
-<body>
-    <div id="wrapper">
-      <div class="container">
-        <div class="phone-app-demo"></div>
-        <div class="form-data">
-          <form action="">
-            <div class="logo">
-              <h1>Instagram</h1>
-            </div>
-            <input type="text" placeholder="Phone number, username, or email">
-            <input type=password placeholder="Password">
-            <button class="form-btn" type="submit">Log in</button>
-            <span class="has-separator">Or</span>
-            <a href="#" class="facebook-login">
-              <i class="fab fa-facebook"></i> Log in with Facebook
-            </a>
-            <a class="password-reset" href="#">Forgot password?</a>
-          </form>
-          <div class="sign-up">
-            Don't an account? <a href="#">Sign up</a>
-          </div>
-          <div class="get-the-app">
-            <span>Get the app</span>
-            <div class="badge">
-              <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/e9cd846dc748.png" alt="android App">
-              <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/180ae7a0bcf7.png" alt="ios app">
-            </div>
-          </div>
-        </div>
-      </div>
+    .container{
+        max-width: 992px;
+        margin: auto;
+    }
+    .row{
+        display: flex;
+    }
+    .content-between{
+        content: space-between;
+    }
+    .content-left{
+        max-width: 500px;
+        margin: auto;
+        margin-left: 90px;
+        margin-top:230px;
+    }
+    .content-right{
+        max-width: 500px;
+        margin-top: 60px;
+        text-align: center;
+    }
+    .login a{
+        display: block;
+        width:86%;
+        height: 30px;
+        margin-left: 23px;
+        margin-top: 7px;
+    }
+    .btn{
+        font-size: 15px;
+        background: rgb(155,218,249);
+        height: 25px;
+        color:white;
+        border-radius: 3px;
+        line-height: 25px;
+        margin-bottom: 15px;
+    }
+    .content-right form{
+        width: 350px;
+        height: 380px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        padding: 15px;
+        margin-right: 120px;
+    }
+    .content-right2 form{
+        width: 350px;
+        height: 60px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        padding: 20px;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    .content-right form input{
+        width: 85%;
+        height: 35px;
+        font-size: 10px;
+        border: 1px solid #ddd;
+        background-color: rgb(246,246,246);
+        border-radius: 2px;
+        padding: 0 15px;
+        margin-bottom: 8px;
+    }
 
-      <footer>
+    .form-group{
+        margin:20px;
+    }
+
+    .separator{
+        font-size: 0.8em;
+        font-weight:bold;
+        color: #8a8c90;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom:15px;
+    }
+    .facebook a{
+        font-size: 15px;
+        font-family: Helvetica, Arial;
+        color:#385185;
+        font-weight:normal;
+    }
+    .forgot{
+        font-size: 12px;
+        font-family: Helvetica, Arial;
+        line-height: 19px;
+        margin-top: 35px;
+        color: #385185
+    }
+    .forgot a{
+        color:#385185;
+    }
+    #install{
+        width: 300px;
+        height: 20px;
+        margin-left:36px;
+        margin-top: 20px;
+        font-size: 15px;
+    }
+    .pic{
+        height: 50px;
+        margin-right: 120px;
+        margin-top: 15px;
+    }
+    #pic1{
+        position: absolute;
+        height: 600px;
+        margin-top: -200px;
+        z-index:1;
+    }
+    #pic2{
+        position: absolute;
+        height: 438px;
+        margin-top:-115px;
+        margin-left:146px;
+        z-index:2;
+    }
+    .bottom-box{
+        padding-top: 50px;
+        height: 50px;
+        font-size:11px;
+        text-align: center;
+        width: 800px;
+    }
+    .bottom-text{
+         color: #8a8c90;
+        margin-left: 170px;
+    }
+    .text a{
+        color: #8a8c90;
+    }
+    .text2 h5{
+        padding-bottom: 10px;
+    }
+    </style>
+    <body>
         <div class="container">
-          <nav class="footer-nav">
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Jobs</a></li>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Profiles</a></li>
-              <li><a href="#">Languages</a></li>
-            </ul>
-          </nav>
-          <div class="copyright-notice">
-            &copy; 2021 Complaints
-          </div>
+            <div class="row content-between">
+                <div class="content-left">
+                    <img id="pic1" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" width=450px>
+                    <img id="pic2" src="https://www.instagram.com/static/images/homepage/screenshot1-2x.jpg/9144d6673849.png" width=245px>
+                </div>
+                <div class="content-right">
+                    <form action="">
+                        <div class="form-group"> <img id="pic" src="https://common.skolkovo.ru/images/mba/stories/logo/instagram.png" width=180px><br>
+                        </div>
+                        <div class="form-group1">
+                            <input type="text" placeholder="Номер телефона,имя пользователя или...">
+                        </div>
+                        <div class="form-group1">
+                            <input type=password placeholder="Пароль">
+                        </div>
+                        <div class="login">
+                            <a href="" class="btn">Войти</a>
+                        </div>
+                        <div class="separator">ИЛИ</div>
+                        <div class="facebook"><img src="http://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19751.png" width=7% ><a href="facebook.com">Войти через Facebook </a>
+                        </div>
+                        <div class="forgot"><a href="#">Забыли пароль?</a></div>
+                    </form>
+                    <div class="content-right2">
+                    <form action="">
+                        <div class="registration"><span style="font-size: 14px;">У вас еще нет аккаунта?</span> <a href="#" style="color:#66A4E1; font-weight: bolder;">Зарегистрироваться</a>
+                        </div>
+                    </form>
+                    <div id="install">
+                        Установите приложение.
+                    </div>
+                    <div class="pic">
+                        <a href="#"><img src="https://it.kaznu.kz/wp-content/uploads/2016/09/App-Store-5000x2000.png" width=90px height=50px; alt="appstore"></a>
+                        <a href="#"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/ru_badge_web_generic.png" alt="googleplay" width=90px height=50px></a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </footer>
-    </div>
-</body>
+        <div class="bottom-box">
+            <div class="bottom-text">
+                <p> 
+                    <div class="text">
+                        <br><br>
+                        <a href="#">Информация</a> 
+                        <a href="#">Блог</a> 
+                        <a href="#">Помощь  </a>    
+                        <a href="#">API  </a> 
+                        <a href="#">Конфиденциальность  </a> 
+                        <a href="#">Условия  </a>  
+                        <a href="#">Популярные аккаунты</a>
+                        <a href="#">Хэштеги  </a> 
+                        <a href="#">Места  </a> 
+                        <a href="#">Красота  </a> 
+                        <a href="#">Танцы и выступления  </a> 
+                        <a href="#">Фитнес</a></p>
+                        <a href="#">Еда и напитки</a>
+                        <a href="#">Дом и сад  </a> 
+                        <a href="#">Музыка  </a> 
+                        <a href="#">Изобразительное искусство</a> 	
+                    </div>
+                        <select name="" id="">
+                            <option value="1">Русский</option>
+                            <option value="2">English</option>
+                            <option value="3">Spanish</option>
+                            <option value="4">Қазақша</option>
+                        </select>
+                        <div class="text2"><h5>© Instagram от Facebook, 2021</h5></div>
+                </div>
+            </div>
+        <body>
 </html>
